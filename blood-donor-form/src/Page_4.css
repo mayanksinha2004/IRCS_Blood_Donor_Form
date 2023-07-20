@@ -1,0 +1,122 @@
+body {
+  margin: 2em;
+  background: #f0f0f0;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+h4 {
+  margin-top: 8px;
+  color: #C21010;
+}
+
+.check-group1 {
+  background: #fff;
+  width: 700px;
+  padding: 1.5rem;
+  margin-left: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 10, 0.2);
+  counter-reset: total;
+  counter-reset: checked;
+}
+.check-group > * + * {
+  margin-top: 0.75rem;
+}
+.check-group .checkbox {
+  counter-increment: total;
+}
+.check-group input[type="checkbox"]:checked {
+  counter-increment: checked;
+}
+.check-group__result {
+  font-weight: bold;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.check-group__result:after {
+  content: counter(checked) " / " counter(total);
+  padding-left: 1ch;
+}
+.checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.checkbox__input {
+  position: absolute;
+  width: 1.375em;
+  height: 1.375em;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox__input:checked + .checkbox__icon .tick {
+  stroke-dashoffset: 0;
+}
+.checkbox__icon {
+  width: 1.375em;
+  height: 1.375em;
+  flex-shrink: 0;
+  overflow: visible;
+}
+.checkbox__icon .tick {
+  stroke-dasharray: 20px;
+  stroke-dashoffset: 20px;
+  transition: stroke-dashoffset 0.2s ease-out;
+}
+.checkbox__label {
+  margin-left: 0.5em;
+  color: black;
+}
+.right {
+  float: right;
+  margin-top: 10px;
+}
+
+/* CSS */
+.button-4 {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #C21010;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 650px;
+}
+
+.button-4:hover,
+.button-4:focus {
+  background-color: #B70404;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-4:hover {
+  transform: translateY(-1px);
+}
+
+.button-4:active {
+  background-color: #B70404;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
